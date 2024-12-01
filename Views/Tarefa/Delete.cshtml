@@ -1,0 +1,24 @@
+﻿@model api.Models.TarefaModels
+
+@{
+    ViewData["Title"] = "Excluir Tarefa";
+    Layout = "_Layout"; 
+}
+
+<h1 class="text-2xl font-bold text-red-600 mb-4">@ViewData["Title"]</h1>
+
+<p class="text-gray-700 mb-6">Você tem certeza que deseja excluir a tarefa <span class="font-semibold">"@Model.Title"</span>?</p>
+
+<form asp-action="Delete" method="post" class="space-y-4">
+    <input type="hidden" name="Id" value="@Model.Id" />
+    <div class="flex items-center space-x-4">
+        <button type="submit"
+                class="px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+            Excluir
+        </button>
+        <a href="@Url.Action("Index", "Tarefa")"
+           class="px-4 py-2 bg-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+            Cancelar
+        </a>
+    </div>
+</form>

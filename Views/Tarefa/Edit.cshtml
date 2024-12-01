@@ -1,0 +1,40 @@
+﻿@model api.Models.TarefaModels
+
+@{
+    ViewData["Title"] = "Editar Tarefa";
+    Layout = "_Layout";
+}
+
+<h1 class="text-2xl font-bold text-yellow-600 mb-4">@ViewData["Title"]</h1>
+
+<form asp-action="Edit" method="post" class="space-y-6">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="space-y-4">
+        <div class="form-group">
+            <label for="Title" class="text-sm font-medium text-gray-700">Título</label>
+            <input type="text" id="Title" name="Title" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" value="@Model.Title" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Description" class="text-sm font-medium text-gray-700">Descrição</label>
+            <input type="text" id="Description" name="Description" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" value="@Model.Description" required />
+        </div>
+
+        <div class="form-group">
+            <label for="Status" class="text-sm font-medium text-gray-700">Status</label>
+            <input type="text" id="Status" name="Status" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500" value="@Model.Status" required />
+        </div>
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <button type="submit"
+                class="px-6 py-3 bg-yellow-500 text-white text-sm font-medium rounded-md shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400">
+            Atualizar
+        </button>
+        <a href="@Url.Action("Index", "Tarefa")"
+           class="px-6 py-3 bg-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+            Cancelar
+        </a>
+    </div>
+</form>

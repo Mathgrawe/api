@@ -1,0 +1,46 @@
+﻿@model api.Models.TarefaModels
+
+<h2 class="text-2xl font-bold mb-6">Criar Tarefa</h2>
+
+<form asp-action="Create" method="post" class="space-y-4">
+    <div>
+        <label for="Title" class="block text-sm font-medium text-gray-700">Título</label>
+        <input type="text"
+               id="Title"
+               name="Title"
+               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+               value="@Model.Title"
+               required />
+    </div>
+
+    <div>
+        <label for="Description" class="block text-sm font-medium text-gray-700">Descrição</label>
+        <input type="text"
+               id="Description"
+               name="Description"
+               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+               value="@Model.Description"
+               required />
+    </div>
+
+    <div>
+        <label for="Status" class="block text-sm font-medium text-gray-700">Status</label>
+        <input type="text"
+               id="Status"
+               name="Status"
+               class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+               value="@Model.Status"
+               required />
+    </div>
+
+    <div class="flex items-center space-x-4">
+        <button type="submit"
+                class="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+            Criar
+        </button>
+        <a href="@Url.Action("Index", "Tarefa")"
+           class="px-4 py-2 bg-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
+            Cancelar
+        </a>
+    </div>
+</form>

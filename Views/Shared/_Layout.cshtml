@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - api</title>
+    <!-- Inclua o Tailwind CSS -->
+    <link rel="stylesheet" href="~/css/tailwind.css" asp-append-version="true" />
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-xl font-semibold">Minha API</h1>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-6">
+        <!-- Renderiza o corpo da página (o conteúdo da view) -->
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-gray-200 text-center py-4">
+        <p class="text-sm text-gray-600">
+            &copy; 2024 - api. Todos os direitos reservados.
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Se houver seções específicas de scripts, elas serão renderizadas aqui -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
